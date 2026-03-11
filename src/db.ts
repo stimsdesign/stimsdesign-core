@@ -1,7 +1,9 @@
 import { Pool as NeonPool } from "@neondatabase/serverless";
 import pg from "pg";
 
-const DATABASE_URL = import.meta.env.DATABASE_URL;
+// Fallback to process.env when executing via CLI scripts (like tsx) instead of Astro
+const env = (import.meta as any).env || process.env || {};
+const DATABASE_URL = env.DATABASE_URL || process.env.DATABASE_URL;
 const IS_NEON = DATABASE_URL?.includes("neon.tech");
 
 // Creating the pool outside the request flow keeps connections alive
