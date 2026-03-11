@@ -1,5 +1,7 @@
 import { Pool as NeonPool } from "@neondatabase/serverless";
 import pg from "pg";
+import dotenv from "dotenv";
+dotenv.config();
 
 // Fallback to process.env when executing via CLI scripts (like tsx) instead of Astro
 const env = (import.meta as any).env || process.env || {};
