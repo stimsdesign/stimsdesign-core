@@ -1,0 +1,14 @@
+{
+  "name": "@stimsdesign/core",
+  "type": "module",
+  "version": "1.0.0",
+  "exports": {
+    "./db": "./src/db.ts",
+    "./logger": "./src/logger.ts"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^1.0.2",
+    "pg": "^8.19.0",
+    "@types/pg": "^8.18.0"
+  }
+}
