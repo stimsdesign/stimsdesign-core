@@ -3,7 +3,7 @@ import pg from "pg";
 
 // Fallback to process.env when executing via CLI scripts (like tsx) instead of Astro
 const env = (import.meta as any).env || process.env || {};
-const DATABASE_URL = env.DATABASE_URL || process.env.DATABASE_URL;
+const DATABASE_URL = env.NETLIFY_DATABASE_URL || env.DATABASE_URL || process.env.NETLIFY_DATABASE_URL || process.env.DATABASE_URL;
 const IS_NEON = DATABASE_URL?.includes("neon.tech");
 
 // Creating the pool outside the request flow keeps connections alive
